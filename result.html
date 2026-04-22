@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="result-container">
+
+    <div class="result-header">
+        <h1>Your Mood: <span>{{ mood }}</span></h1>
+        <p class="user-text">“{{ user_text }}”</p>
+    </div>
+
+    <div class="playlist-grid">
+        {% for v in videos %}
+        <div class="playlist-card">
+
+            <div class="image-wrapper">
+                <img src="{{ v.thumbnail }}" alt="video">
+            </div>
+
+            <div class="card-content">
+                <h3>{{ v.title }}</h3>
+                <p>{{ v.channel }}</p>
+
+                <a href="{{ v.url }}" target="_blank" class="open-btn">
+                    Watch →
+                </a>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="back-section">
+        <a href="/" class="back-btn">← Try another mood</a>
+    </div>
+
+</div>
+
+</body>
+</html>

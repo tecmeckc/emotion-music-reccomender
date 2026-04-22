@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Music Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="hero">
+    <h1>🎵 Emotion-Based Music Recommender</h1>
+    <p>Tell us how you feel and get YouTube songs</p>
+
+    <form action="/recommend" method="POST" class="input-box">
+        <textarea name="mood_text" placeholder="How are you feeling today?" required></textarea>
+        <button type="submit">Get Songs</button>
+    </form>
+</div>
+
+</body>
+</html>
